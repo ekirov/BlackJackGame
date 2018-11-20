@@ -1,6 +1,5 @@
-
-#ifndef DECK_H
-#define DECK_H
+#ifndef SHOE_H
+#define SHOE_H
 #include "Card.h"
 #include <vector>
 #include <iostream>
@@ -9,9 +8,9 @@
 using namespace std;
 
 
-class Deck{
+class Shoe{
 public:
-	vector<Card *> shoe;
+	vector<Card *> cards;
 	void addCards();
 };
 

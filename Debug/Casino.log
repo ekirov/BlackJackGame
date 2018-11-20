@@ -1,20 +1,34 @@
-﻿Build started 9/5/2018 4:36:17 PM.
-     1>Project "c:\Users\emil\documents\visual studio 2013\Projects\Casino\Casino\Casino.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/19/2018 8:45:06 PM.
+     1>Project "C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Casino\Casino.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Table.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Card.cpp Dealer.cpp Hand.cpp main.cpp Player.cpp Shoe.cpp Table.cpp
          Table.cpp
-     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\table.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\table.cpp(105): warning C4018: '<' : signed/unsigned mismatch
+         Shoe.cpp
+         Player.cpp
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\player.cpp(37): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\player.cpp(41): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\player.cpp(52): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\player.cpp(59): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\player.cpp(67): warning C4018: '<' : signed/unsigned mismatch
+         main.cpp
+         Hand.cpp
+         Dealer.cpp
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\dealer.cpp(104): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\emil\documents\visual studio 2013\projects\casino\casino\dealer.cpp(115): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         Card.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\emil\documents\visual studio 2013\Projects\Casino\Debug\Casino.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\emil\documents\visual studio 2013\Projects\Casino\Debug\Casino.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\emil\documents\visual studio 2013\Projects\Casino\Debug\Casino.lib" /MACHINE:X86 Debug\Card.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Debug\Casino.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Debug\Casino.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Debug\Casino.lib" /MACHINE:X86 Debug\Card.obj
          Debug\Dealer.obj
-         Debug\Deck.obj
          Debug\Hand.obj
          Debug\main.obj
          Debug\Player.obj
+         Debug\Shoe.obj
          Debug\Table.obj
-         Casino.vcxproj -> c:\users\emil\documents\visual studio 2013\Projects\Casino\Debug\Casino.exe
-     1>Done Building Project "c:\Users\emil\documents\visual studio 2013\Projects\Casino\Casino\Casino.vcxproj" (Build target(s)).
+         Casino.vcxproj -> C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Debug\Casino.exe
+     1>Done Building Project "C:\Users\emil\Documents\Visual Studio 2013\Projects\Casino\Casino\Casino.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:05.72

@@ -18,8 +18,7 @@ public:
 	float bankroll;
 	float bet;
 	vector<Hand *> hands;
-	bool bust;
-	void split();
+	//bool bust;
 	void doubleDown(Dealer *d, vector<Card *> &shoe, Table *t, int hand_index);
 	void placeBet();
 	void enterGame();

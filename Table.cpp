@@ -5,13 +5,13 @@
 Table::Table(){
 	this->plr = nullptr;
 	this->dlr = nullptr;
-	this->deck = nullptr;
+	this->shoe = nullptr;
 	this->lastHand = false;
 }
 
 void Table::startGame(){
 	Player *player = this->plr;
-	Deck *deck = this->deck;
+	Shoe *shoe = this->shoe;
 	Dealer *dealer = this->dlr;
 	dealer->introduction();
 
@@ -29,13 +29,12 @@ void Table::startGame(){
 	/*
 		Add cards to the shoe and shuffle them
 	*/
-	deck->addCards();
+	shoe->addCards();
 	cout << "New deck of cards being added to table." << endl;
-	vector<Card *> shoe = deck->shoe;
 	cout << "Dealer will now shuffle the cards..." << endl;
-	dealer->shuffleDeck(shoe);
-	dealer->insertCutCard(shoe);
-	shoe.pop_back();//burn card
+	dealer->shuffleDeck(shoe->cards);
+	dealer->insertCutCard(shoe->cards);
+	shoe->cards.pop_back();//burn card
 	
 
 	/*
@@ -63,7 +62,7 @@ void Table::startGame(){
 			cout << "You have $" << player->bankroll << endl;
 			player->placeBet();
 			cout << endl;
-			dealer->giveInitCards(player, shoe, this);
+			dealer->giveInitCards(player, shoe->cards, this);
 
 			/*
 				If player has blackjack then player wins.
@@ -116,7 +115,7 @@ void Table::startGame(){
 							splitable = player->handSplitable(hand_index);
 						}
 						else if (player->hands[hand_index]->cards.size() == 1){
-							dealer->givePlayerCard(player, shoe, this, hand_index);
+							dealer->givePlayerCard(player, shoe->cards, this, hand_index);
 							splitable = player->handSplitable(hand_index);
 						}
 						else if (player->hands[hand_index]->cards.size()>2){
@@ -146,13 +145,13 @@ void Table::startGame(){
 						/* stay */
 						if (decision == "s"){
 							if (hand_index+1 == player->hands.size())
-								player->stay(dealer, shoe, this);
+								player->stay(dealer, shoe->cards, this);
 							hand_index++;
 							count = 0;
 						}
 						/* hit */
 						else if (decision == "h"){
-							player->hit(dealer, shoe, this, hand_index);
+							player->hit(dealer, shoe->cards, this, hand_index);
 							if (player->hands[hand_index]->score > 21 && hand_index + 1 != player->hands.size()){
 								cout << "This hand has busted!" << endl;
 								hand_index++;
@@ -160,7 +159,7 @@ void Table::startGame(){
 							}
 							else if (player->hands[hand_index]->score > 21 && hand_index + 1 == player->hands.size()){
 								cout << "This hand has busted!" << endl;
-								player->stay(dealer, shoe, this);
+								player->stay(dealer, shoe->cards, this);
 								hand_index++;
 								count = 0;
 							}
@@ -176,7 +175,7 @@ void Table::startGame(){
 								cout << "-------------------------------------------------------------" << endl;
 							}
 							else if (count == 0){
-								player->doubleDown(dealer, shoe, this, hand_index);
+								player->doubleDown(dealer, shoe->cards, this, hand_index);
 								hand_index++;
 								count = 0;
 							}
@@ -196,7 +195,7 @@ void Table::startGame(){
 								/*
 								Will split the current hand into two hands and leave the hand index on the current hand.
 								*/
-								player->split(dealer, shoe, this, hand_index);
+								player->split(dealer, shoe->cards, this, hand_index);
 							}
 							else
 							{
@@ -222,16 +221,14 @@ void Table::startGame(){
 			/*
 				Once the cut card has been pulled then the last hand of the table has been played and new cards are shuffled and put into play.
 			*/
-			deck->shoe.empty();
-			deck->addCards();
-			shoe.empty();
+			shoe->cards.empty();
+			shoe->addCards();
 			cout << endl;
 			cout << endl;
 			cout << "New deck of cards being added to table." << endl;
-			shoe = deck->shoe;
 			cout << "Dealer will now shuffle the cards..." << endl;
-			dealer->shuffleDeck(shoe);
-			dealer->insertCutCard(shoe);
+			dealer->shuffleDeck(shoe->cards);
+			dealer->insertCutCard(shoe->cards);
 			lastHand = false;
 		}
 

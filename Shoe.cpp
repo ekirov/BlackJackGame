@@ -1,12 +1,12 @@
-#include "Deck.h"
+#include "Shoe.h"
 #include <algorithm>
 #include <string>
 
 /*
-	Add 6 decks worth of cards
+Add 6 decks worth of cards
 */
-void Deck::addCards(){
-	this->shoe.empty();
+void Shoe::addCards(){
+	this->cards.empty();
 	vector<char> suits{ 3, 4, 5, 6 };
 
 	for (int i = 2; i <= 10; i++){
@@ -16,7 +16,7 @@ void Deck::addCards(){
 			cur->type = to_string(i);
 			cur->value = i;
 			for (int j = 0; j < 6; j++){
-				this->shoe.push_back(cur);
+				this->cards.push_back(cur);
 			}
 		}
 	}
@@ -28,7 +28,7 @@ void Deck::addCards(){
 			cur->type = *it;
 			cur->value = 10;
 			for (int j = 0; j < 6; j++){
-				this->shoe.push_back(cur);
+				this->cards.push_back(cur);
 			}
 		}
 	}
@@ -38,7 +38,7 @@ void Deck::addCards(){
 			cur->suit = *it;
 			cur->type = "A";
 			cur->value = 11;
-			this->shoe.push_back(cur);
+			this->cards.push_back(cur);
 		}
 	}
 }
